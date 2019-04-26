@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class ClickMove : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class ClickMove : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) &&  !EventSystem.current.IsPointerOverGameObject())
         {
             Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
