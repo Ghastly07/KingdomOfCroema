@@ -14,10 +14,9 @@ public class DialogueTrigger : MonoBehaviour {
         dialogueController.StartDialogue(dialogue);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
+        if (collision.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.E)) {
             TriggerDialogue();
         }
     }
