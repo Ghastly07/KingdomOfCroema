@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour {
 
     public Dialogue dialogue;
+    public GameObject ClickKeyInfo;
 
     [SerializeField]
     private DialogueController dialogueController;
@@ -17,7 +18,18 @@ public class DialogueTrigger : MonoBehaviour {
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.E)) {
+            ClickKeyInfo.SetActive(false);
             TriggerDialogue();
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        ClickKeyInfo.SetActive(false);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        ClickKeyInfo.SetActive(true);
     }
 }
