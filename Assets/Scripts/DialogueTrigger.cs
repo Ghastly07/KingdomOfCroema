@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour {
-
+public class DialogueTrigger : MonoBehaviour
+{
     public Dialogue dialogue;
     public GameObject ClickKeyInfo;
 
@@ -17,7 +17,8 @@ public class DialogueTrigger : MonoBehaviour {
 
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player") && Input.GetKey(KeyCode.E)) {
+        if (collision.gameObject.CompareTag(Data.PlayerTag) && Input.GetKey(KeyCode.E))
+        {
             ClickKeyInfo.SetActive(false);
             TriggerDialogue();
         }

@@ -16,11 +16,6 @@ public class TutorialManager : MonoBehaviour
         messageBox.SetActive(true);
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (enemiesDefeatedCount >= 3)
@@ -36,6 +31,6 @@ public class TutorialManager : MonoBehaviour
 
     void TutorialEnd()
     {
-        SceneManager.LoadScene("TownScene",LoadSceneMode.Single);
+        SceneManager.LoadScene(Data.TownSceneTag, LoadSceneMode.Single);
     }
 }
