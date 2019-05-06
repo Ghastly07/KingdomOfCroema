@@ -11,11 +11,13 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         PlayerController.EventTakeDamage += UpdateHealthSlider;
+        PlayerController.EventHeal += UpdateHealthSlider;
     }
 
     private void OnDestroy()
     {
         PlayerController.EventTakeDamage -= UpdateHealthSlider;
+        PlayerController.EventHeal -= UpdateHealthSlider;
     }
 
     private void UpdateHealthSlider(float currentHealthValue, float maxHealth)

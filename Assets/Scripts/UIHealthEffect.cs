@@ -22,17 +22,24 @@ public class UIHealthEffect : MonoBehaviour
     {
         effectImage = GetComponent<Image>();
         currentFillValue = effectImage.fillAmount;
-        PlayerController.EventTakeDamage += Activate;
+        PlayerController.EventTakeDamage += ActivateTakeDamage;
+        PlayerController.EventHeal += ActivateHeal;
     }
 
     private void OnDestroy()
     {
-        PlayerController.EventTakeDamage -= Activate;
+        PlayerController.EventTakeDamage -= ActivateTakeDamage;
+        PlayerController.EventHeal -= ActivateHeal;
     }
 
-    private void Activate(float currentHealthValue,float maxHealth)
+    private void ActivateTakeDamage(float currentHealthValue,float maxHealth)
     {
         StartCoroutine(ActivateEffect(currentHealthValue/maxHealth));
+    }
+
+    private void ActivateHeal(float currentHealthValue, float maxHealth)
+    {
+        effectImage.fillAmount = currentHealthValue / maxHealth;
     }
 
     private IEnumerator ActivateEffect(float endValue)
