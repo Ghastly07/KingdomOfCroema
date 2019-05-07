@@ -1,0 +1,53 @@
+Kingdom of Croema - scenariusz
+
+
+Wersja dokumentu V1.1
+	Osoba tworz¹ca V1.1 - Ma³gorzata Macura
+	Osoba odpowiedzialna V1.1 - Mateusz Mrozek
+
+
+Spis treœci
+	
+	1) Opis gry
+	2) Opis funkcjonalnoœci
+	3) Planowany przebieg gry
+
+
+1) Opis gry
+	
+	Kingdom of Croema to gra typu hack'n'slash. Akcja dzieje siê w œwiecie fantasy. 
+Gracz ma za zadanie eksplorowaæ œwiat gry, pokonywaæ przeciwników oraz zdobywaæ punkty doœwiadczenia. 
+Wraz ze wzrstem poziomu bohatera (poprzez zebrane doœwiadczenie) gracz rozwija umiejêtnœci swojej postaci.
+
+
+2) Opis funkcjonalnoœci
+
+	-Grafika gry oparta o typ LowPoly w tematyce fantasy. 
+	-Interfejs gracza sk³¹da siê na:
+		*Widok menu - START, EXIT, GAME CONTINUE, NEW GAME, ABOUT
+		*Widok tworzenia nowej rozgrywki (NEW GAME) - (wybór postaci) MALE, FEMALE
+		*Widok pauzy gry - EXIT GAME, BACK TO MENU, CONTINUE
+	-Umiejêtnoœci gracza: 
+		*Atak z bliska
+		*Mo¿liwoœæ ulepszania ataku wraz z zdobyciem punktów doœwiadczenia
+		*Zdobywanie punktów doœwiadczenia
+		*Pasek ¿ycia
+		*Mo¿liwoœæ leczenia przy fontannie ¿ycia (1 lvl gry, czyt. rodzia³ 3.)
+		*Mo¿liwoœæ romowy z innymi postaciami na poszczególnych levelach
+
+3) Planowany przebieg gry
+
+	W folderze Docs zosta³ zamieszczony schemat poziomów gry.
+	Pierwszy poziom to centrum miasteczka w której rozpoczyna siê gra.
+	Pocz¹tkowy level jest typem samouczka, gdzie gracz po wyœwietleniu komunikatów otrzymuje informacje jak graæ.
+	Jego zadaniem jest eksploracja tego poziomu, pokonanie 2 prostych przeciwnków oraz odkrycie fontanny ¿ycia.
+	
+	Po przejœciu 1-szego poziomu otwiera siê brama do kolejnego poziomu. Tak dzieje siê z ka¿dym przebytym poziomem.
+	Kolejne poziomy to Mroczny Las, Pustynne Pustkowie i MroŸna Kraina. Kazdy level koñczy siê Bossem.
+
+
+
+
+3)
+
+
