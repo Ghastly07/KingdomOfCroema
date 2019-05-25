@@ -13,6 +13,12 @@ public class ClickMove : MonoBehaviour
     [SerializeField]
     float rayDistance = 200;
 
+    [SerializeField]
+    Texture2D defaultCursor;
+
+    [SerializeField]
+    Texture2D attackCursor;
+
     private NavMeshAgent navMeshAgent;
 
     private void Awake()
@@ -22,11 +28,22 @@ public class ClickMove : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButton(0) &&  !EventSystem.current.IsPointerOverGameObject())
+        Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit, rayDistance);
+
+        if (hit.transform.gameObject.layer == LayerMask.NameToLayer(Data.EnemyLayer))
         {
-            Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, rayDistance, clickableLayer))
+            Cursor.SetCursor(attackCursor, Vector2.zero, CursorMode.Auto);
+        }
+        else
+        {
+            Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+        }
+
+        if (Input.GetMouseButton(0) &&  !EventSystem.current.IsPointerOverGameObject())
+        {
+            if (Physics.Raycast(ray, out hit, rayDistance, clickableLayer))
             {
                 navMeshAgent.SetDestination(hit.point);
             }
