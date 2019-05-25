@@ -22,7 +22,7 @@ public class ClickMove : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonDown(0) &&  !EventSystem.current.IsPointerOverGameObject())
+        if(Input.GetMouseButton(0) &&  !EventSystem.current.IsPointerOverGameObject())
         {
             Ray ray = myCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
