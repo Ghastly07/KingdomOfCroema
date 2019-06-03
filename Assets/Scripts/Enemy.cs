@@ -5,15 +5,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private float maxHealth = 10;
-    private float currentHealth;
+    protected float maxHealth = 10;
+    protected float currentHealth;
 
-    private void Start()
+    protected void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void GetDamage(float amount)
+    public virtual void GetDamage(float amount)
     {
         Debug.Log("Enemy " + gameObject.name + " get " + amount + " of damage");
         currentHealth -= amount;

@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class AIBehaviour : MonoBehaviour
 {
+    public event System.Action EventHasTarget;
+    public event System.Action EventLostTarget;
+
     [SerializeField]
     private NavMeshAgent agent;
 
@@ -70,8 +73,9 @@ public class AIBehaviour : MonoBehaviour
 
     private IEnumerator ChaseTimer()
     {
+        EventHasTarget?.Invoke();
         yield return new WaitForSeconds(chaseTime);
-
+        EventLostTarget?.Invoke();
         playerNoticed = false;
         currentState = AIState.Wander;
     }
