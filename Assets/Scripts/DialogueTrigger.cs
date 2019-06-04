@@ -24,7 +24,7 @@ public class DialogueTrigger : MonoBehaviour
 
         if (collision.gameObject.CompareTag(Data.PlayerTag) && Input.GetKey(KeyCode.F))
         {
-            SceneManager.LoadScene(Data.FirstSceneTag);
+            SceneManager.LoadScene("FirstLevel");
 
         }
     }
