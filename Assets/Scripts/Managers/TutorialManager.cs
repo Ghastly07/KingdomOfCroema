@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class TutorialManager : MonoBehaviour
+public class TutorialManager : Singleton<TutorialManager>
 {
     public GameObject messageBox;
     public Text messageBoxText;
@@ -13,6 +13,7 @@ public class TutorialManager : MonoBehaviour
 
     void Awake()
     {
+        messageBoxText.text = "Otwierasz oczy. Przed Tobą rozpościera się arena. Czujesz mocny ból głowy. Rozglądasz się dokoła, widzisz tłum gapiów i osobę w białej długiej szacie stojącą nad Tobą. Czujesz, że musisz działać – wstajesz i podchodzisz do niej.";
         messageBox.SetActive(true);
     }
 
@@ -29,8 +30,22 @@ public class TutorialManager : MonoBehaviour
         messageBox.SetActive(false);
     }
 
+    public void EnemiesDefeated()
+    {
+        enemiesDefeatedCount++;
+    }
+
     void TutorialEnd()
     {
-        SceneManager.LoadScene(Data.TownSceneTag, LoadSceneMode.Single);
+        messageBoxText.text = "Wygrałeś! Możesz teraz odejść w stronę miasta";
+        messageBox.SetActive(true);
+        Time.timeScale = 0;
+        StartCoroutine(Wait(8));
+        SceneManager.LoadScene(Data.TownSceneTag);
+    }
+
+    IEnumerator Wait(float sec)
+    {
+        yield return new WaitForSeconds(sec);
     }
 }

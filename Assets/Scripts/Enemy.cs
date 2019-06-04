@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
         if(currentHealth <= 0)
         {
             currentHealth = 0;
+            TutorialManager.Instance.EnemiesDefeated();
             Destroy(gameObject);
         }
     }

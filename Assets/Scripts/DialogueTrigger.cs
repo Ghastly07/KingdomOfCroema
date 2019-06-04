@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -21,6 +20,12 @@ public class DialogueTrigger : MonoBehaviour
         {
             ClickKeyInfo.SetActive(false);
             TriggerDialogue();
+        }
+
+        if (collision.gameObject.CompareTag(Data.PlayerTag) && Input.GetKey(KeyCode.F))
+        {
+            SceneManager.LoadScene(Data.FirstSceneTag);
+
         }
     }
 

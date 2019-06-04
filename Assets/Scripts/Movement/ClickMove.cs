@@ -32,14 +32,14 @@ public class ClickMove : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(ray, out hit, rayDistance);
 
-        if (hit.transform.gameObject.layer == LayerMask.NameToLayer(Data.EnemyLayer))
-        {
-            Cursor.SetCursor(attackCursor, Vector2.zero, CursorMode.Auto);
-        }
-        else
-        {
-            Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
-        }
+        //if (hit.transform.gameObject.layer == LayerMask.NameToLayer(Data.EnemyLayer))
+        //{
+        //    Cursor.SetCursor(attackCursor, Vector2.zero, CursorMode.Auto);
+        //}
+        //else
+        //{
+        //    Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+        //}
 
         if (Input.GetMouseButton(0) &&  !EventSystem.current.IsPointerOverGameObject())
         {
